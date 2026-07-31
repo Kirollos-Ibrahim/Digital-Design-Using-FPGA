@@ -1,8 +1,6 @@
-# Digital Design with Verilog
+# Digital Design Using FPGA
 
 A collection of digital design projects implemented in **Verilog HDL**, covering fundamental combinational and sequential circuits used in FPGA and ASIC design.
-
-This repository is intended for learning, practicing RTL design, and building a professional portfolio. Every project is designed using industry-standard coding practices, simulated using **ModelSim**, and progressively synthesized using **Xilinx Vivado** as the complexity of the designs increases.
 
 ---
 
@@ -11,8 +9,7 @@ This repository is intended for learning, practicing RTL design, and building a 
 * Practice RTL design using Verilog HDL.
 * Implement digital circuits using different modeling styles.
 * Verify functionality through simulation and testbenches.
-* Build a reusable library of digital design modules.
-* Prepare for FPGA, RTL Design, and Verification engineering roles.
+* Build a reusable library of digital design modules. 
 
 ---
 
@@ -70,7 +67,6 @@ screenshots/
 
 * 2×1 Multiplexer
 * 4×1 Multiplexer
-* 8×1 Multiplexer
 * 2-to-4 Decoder
 * Binary to Gray Converter
 
@@ -125,12 +121,6 @@ The repository will continue to expand with more advanced topics, including:
 * Pipelined Designs
 * Finite State Machines
 * FPGA Board Implementations
-
----
-
-## Contributing
-
-This repository is primarily maintained as a personal learning and portfolio project. Suggestions and improvements are always welcome.
 
 ---
 
