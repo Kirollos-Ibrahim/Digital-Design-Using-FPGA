@@ -1,0 +1,139 @@
+# Digital Design with Verilog
+
+A collection of digital design projects implemented in **Verilog HDL**, covering fundamental combinational and sequential circuits used in FPGA and ASIC design.
+
+This repository is intended for learning, practicing RTL design, and building a professional portfolio. Every project is designed using industry-standard coding practices, simulated using **ModelSim**, and progressively synthesized using **Xilinx Vivado** as the complexity of the designs increases.
+
+---
+
+## Repository Objectives
+
+* Practice RTL design using Verilog HDL.
+* Implement digital circuits using different modeling styles.
+* Verify functionality through simulation and testbenches.
+* Build a reusable library of digital design modules.
+* Prepare for FPGA, RTL Design, and Verification engineering roles.
+
+---
+
+## Design Methodology
+
+Each design follows the standard digital design flow:
+
+1. Design the circuit specification.
+2. Implement the RTL in Verilog.
+3. Develop a comprehensive testbench.
+4. Simulate and verify functionality using ModelSim.
+5. Synthesize the design using Xilinx Vivado (for applicable projects).
+6. Review RTL schematics and synthesis results.
+
+---
+
+## Coding Styles
+
+Whenever applicable, the same circuit is implemented using multiple Verilog modeling styles:
+
+* Gate-Level Modeling
+* Dataflow Modeling
+* Behavioral Modeling
+
+This enables comparison between different implementation approaches while producing equivalent hardware functionality.
+
+---
+
+## Repository Structure
+
+```
+src/
+    Combinational/
+    Sequential/
+
+testbenches/
+    Combinational/
+    Sequential/
+
+simulations/
+    ModelSim/
+
+vivado/
+
+docs/
+
+screenshots/
+```
+
+---
+
+## Current Projects
+
+### Combinational Logic
+
+* 2×1 Multiplexer
+* 4×1 Multiplexer
+* 8×1 Multiplexer
+* 2-to-4 Decoder
+* Binary to Gray Converter
+
+Additional combinational circuits will be added over time.
+
+### Sequential Logic (Planned)
+
+* SR Flip-Flop
+* JK Flip-Flop
+* D Flip-Flop
+* T Flip-Flop
+* Registers
+* Shift Registers
+* Counters
+* Finite State Machines (FSM)
+
+---
+
+## Development Tools
+
+| Tool          | Purpose                              |
+| ------------- | ------------------------------------ |
+| Verilog HDL   | RTL Design                           |
+| ModelSim      | Simulation & Functional Verification |
+| Xilinx Vivado | Synthesis and RTL Analysis           |
+| Git & GitHub  | Version Control                      |
+
+---
+
+## Verification
+
+Most projects include dedicated Verilog testbenches used to verify the correctness of the implemented circuits through simulation.
+
+Simulation waveforms are included whenever applicable.
+
+---
+
+## Future Work
+
+The repository will continue to expand with more advanced topics, including:
+
+* Arithmetic Logic Unit (ALU)
+* Carry Look-Ahead Adder
+* Barrel Shifter
+* Priority Encoder
+* Booth Multiplier
+* UART
+* SPI
+* I²C
+* FIFO
+* Memory Modules
+* Pipelined Designs
+* Finite State Machines
+* FPGA Board Implementations
+
+---
+
+## Contributing
+
+This repository is primarily maintained as a personal learning and portfolio project. Suggestions and improvements are always welcome.
+
+---
+
+## License
+
+This project is released under the MIT License.
