@@ -18,7 +18,7 @@ Contains designs whose outputs depend only on the current input values.
 
 Examples include:
 
-* Multiplexers (MUX)
+* Multiplexers (MUXs)
 * Decoders
 * Encoders
 * Code Converters
