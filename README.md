@@ -49,14 +49,11 @@ testbenches/
     Combinational/
     Sequential/
 
-simulations/
+simulations and synthesis/
     ModelSim/
+    Vivado/
 
-vivado/
-
-docs/
-
-screenshots/
+HDLBits/
 ```
 
 ---
