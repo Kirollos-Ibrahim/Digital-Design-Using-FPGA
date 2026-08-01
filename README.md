@@ -49,7 +49,7 @@ testbenches/
     Combinational/
     Sequential/
 
-simulations and synthesis/
+simulations-and-synthesis/
     ModelSim/
     Vivado/
 
