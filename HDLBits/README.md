@@ -23,6 +23,7 @@ Each solved problem includes:
 * Verilog HDL source code
 * Link to the original HDLBits problem
 * Clear and readable RTL implementation
+* Photo of the results and waveforms
 
 Solutions are organized according to the HDLBits problem categories whenever applicable.
 
