@@ -13,10 +13,10 @@ module top_module (
     always@(*)
     begin
       case(sel)
-        0: q = d;
-        1: q = q1; 
-        2: q = q2;
-        3: q = q3;
+        2'b00: q = d;
+        2'b01: q = q1; 
+        2'b10: q = q2;
+        2'b11: q = q3;
       endcase
     end
 endmodule
