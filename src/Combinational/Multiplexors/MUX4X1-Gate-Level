@@ -3,16 +3,16 @@ module MUX4X1_GL(
   input wire b,
   input wire c,
   input wire d,
-  input wire [1:0] s,
+  input wire [1:0] sel,
   output wire y
 );
   wire or0;
   wire or1;
   wire or2;
   wire or3;
-  and a0 (or0, a, !s[0], !s[1]);
-  and a1 (or1, b, s[0],  !s[1]);
-  and a2 (or2, c, !s[0], s[1]);
-  and a3 (or3, d, s[0],  s[1]);
+  and a0 (or0, a, !sel[0],  !sel[1]);
+  and a1 (or1, b,  sel[0],  !sel[1]);
+  and a2 (or2, c, !sel[0],   sel[1]);
+  and a3 (or3, d,  sel[0],   sel[1]);
   or or0 (y, or0, or1, or2, or3);
 endmodule
