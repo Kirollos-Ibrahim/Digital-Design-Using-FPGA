@@ -14,5 +14,5 @@ module MUX4X1_GL(
   and a1 (or1, b,  sel[0],  !sel[1]);
   and a2 (or2, c, !sel[0],   sel[1]);
   and a3 (or3, d,  sel[0],   sel[1]);
-  or or0 (y, or0, or1, or2, or3);
+  or  o0 (y, or0, or1, or2, or3);
 endmodule
