@@ -7,7 +7,7 @@ module MUX_TB;
   reg              sel  ;
   wire [WIDTH-1:0] mux_out;
 
-  MUX #(.WIDTH( WIDTH )) mux0 (.*);
+  MUX #(.WIDTH( WIDTH )) mux0 (.in0(in0), in1(in1), .sel(sel), .mux_out(mux_out));
 
   task expect;
     input [WIDTH-1:0] exp_out;
