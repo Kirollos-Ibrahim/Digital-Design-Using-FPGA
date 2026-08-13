@@ -21,7 +21,6 @@ module control_system (
     localparam STATE_READ_COL0 = 3'd2;
     localparam STATE_READ_COL1 = 3'd3;
     localparam STATE_READ_COL2 = 3'd4;
-    localparam STATE_DONE      = 3'd5;
 
     reg [2:0] current_state, next_state;
     reg [4:0] calc_timer;
@@ -54,22 +53,16 @@ module control_system (
 
         case (current_state)
             STATE_IDLE: begin
-                if (in_cs_data_en) begin
-                    next_state = STATE_CALC;
-                end
+                if (in_cs_data_en) next_state = STATE_CALC;
             end
-
             STATE_CALC: begin
                 out_cs_valid = 1'b1;
-                if (calc_timer == CALC_CYCLES) begin
-                    next_state = STATE_READ_COL0;
-                end
+                if (calc_timer == CALC_CYCLES) next_state = STATE_READ_COL0;
             end
-
             STATE_READ_COL0: begin
                 out_cs_hold  = 1'b1;
-                out_cs_ctrl1 = 2'd0; 
-                out_cs_ctrl2 = 2'd0; 
+                out_cs_ctrl1 = 2'd0;
+                out_cs_ctrl2 = 2'd0;
                 out_cs_ctrl3 = 2'd0;
                 if (!in_cs_full1 && !in_cs_full2 && !in_cs_full3) begin
                     out_cs_winc1 = 1'b1;
@@ -78,11 +71,10 @@ module control_system (
                     next_state   = STATE_READ_COL1;
                 end
             end
-
             STATE_READ_COL1: begin
                 out_cs_hold  = 1'b1;
-                out_cs_ctrl1 = 2'd1; 
-                out_cs_ctrl2 = 2'd1; 
+                out_cs_ctrl1 = 2'd1;
+                out_cs_ctrl2 = 2'd1;
                 out_cs_ctrl3 = 2'd1;
                 if (!in_cs_full1 && !in_cs_full2 && !in_cs_full3) begin
                     out_cs_winc1 = 1'b1;
@@ -91,26 +83,18 @@ module control_system (
                     next_state   = STATE_READ_COL2;
                 end
             end
-
             STATE_READ_COL2: begin
                 out_cs_hold  = 1'b1;
-                out_cs_ctrl1 = 2'd2; 
-                out_cs_ctrl2 = 2'd2; 
+                out_cs_ctrl1 = 2'd2;
+                out_cs_ctrl2 = 2'd2;
                 out_cs_ctrl3 = 2'd2;
                 if (!in_cs_full1 && !in_cs_full2 && !in_cs_full3) begin
                     out_cs_winc1 = 1'b1;
                     out_cs_winc2 = 1'b1;
                     out_cs_winc3 = 1'b1;
-                    next_state   = STATE_DONE;
+                    next_state   = STATE_IDLE;
                 end
             end
-
-            STATE_DONE: begin
-                if (!in_cs_data_en) begin
-                    next_state = STATE_IDLE;
-                end
-            end
-
             default: next_state = STATE_IDLE;
         endcase
     end

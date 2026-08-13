@@ -8,7 +8,10 @@ module systolic_array_top #(
     input wire in_systolic_array_rinc1,
     input wire in_systolic_array_rinc2,
     input wire in_systolic_array_rinc3,
+    input wire in_systolic_array_start,
     output wire empty1, empty2, empty3,
+    output wire out_img2col_sys_valid,
+    output wire out_systolic_array_done,
     input wire [WIDTH-1:0] in_systolic_array_a_r0,	
     input wire [WIDTH-1:0] in_systolic_array_a_r1,
     input wire [WIDTH-1:0] in_systolic_array_a_r2,	
@@ -17,7 +20,9 @@ module systolic_array_top #(
     input wire [WIDTH-1:0] in_systolic_array_b_c2,
     output wire [19:0] out_systolic_array_ai_out1,
     output wire [19:0] out_systolic_array_ai_out2,
-    output wire [19:0] out_systolic_array_ai_out3
+    output wire [19:0] out_systolic_array_ai_out3,
+    output wire [15:0] out_systolic_array_ai_img
+
 );
 
     wire [1:0] in_systolic_array_ctrl1, in_systolic_array_ctrl2, in_systolic_array_ctrl3; 
@@ -95,5 +100,14 @@ module systolic_array_top #(
         .out_cs_ctrl2(in_systolic_array_ctrl2),
         .out_cs_ctrl3(in_systolic_array_ctrl3)
     );
+    img2col_ctrl #(.ADDR_WIDTH(16),.K(3),.IMG_HEIGHT(5), .IMG_WIDTH(5), .S(1))d1 (
+    .in_img2col_clk(in_systolic_array_clk),
+    .in_img2col_rst(in_systolic_array_rst),
+    .in_img2col_start(in_systolic_array_start),
+
+    .out_img2col_mem_addr(out_systolic_array_ai_img),
+    .out_img2col_valid(out_img2col_sys_valid), 
+    .out_img2col_done(out_systolic_array_done)  
+        );
 
 endmodule
